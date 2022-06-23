@@ -19,6 +19,8 @@
                 </td>
                 <td>
                     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ErrorMessage="Enter Name !"  ControlToValidate="TextBox1"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -27,6 +29,8 @@
                  </td>
                 <td>
                     <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                        ErrorMessage="Enter Mobile No !"  ControlToValidate="TextBox2"></asp:RequiredFieldValidator>
                  </td>
             </tr>
             <tr>
@@ -35,6 +39,11 @@
                  </td>
                 <td>
                     <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                        ErrorMessage="Enter Proper Id "  ControlToValidate="TextBox3" 
+                        ValidationExpression="^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"></asp:RegularExpressionValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                        ErrorMessage="Enter Email ID !"  ControlToValidate="TextBox3" ></asp:RequiredFieldValidator>
                  </td>
 
             </tr>
@@ -44,11 +53,15 @@
                 </td>
             <td>
                 <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ErrorMessage="Enter City !" ControlToValidate="TextBox4" ></asp:RequiredFieldValidator>
+                
                 </td>
             </tr>
             <tr>
             <td>
-                <asp:Button ID="Button1" runat="server" Text="Submit" />
+                <asp:Button ID="Button1" runat="server" Text="Submit" onclick="Button1_Click" />
                 </td>
             <td>
                 <asp:Button ID="Button2" runat="server" Text="Log In" />
@@ -57,5 +70,7 @@
          </table>
         </form>
    </div>
+    <p>
+        &nbsp;</p>
 </body>
 </html>
